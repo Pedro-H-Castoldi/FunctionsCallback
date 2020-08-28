@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../global.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Conversor de Temperatura</h1>
+    </header>
+
+    <section>
+        <main>
+                <div id="content">
+                    <div class="convertion">
+
+                        <div>
+                            <span>De</span>
+                            <select id="unit-1">
+                                <optgroup label="Informe a unidade">
+                                    <option>Celsius</option>
+                                    <option>Fahrenheit</option>
+                                    <option>Kelvin</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <div class="before">
+                            <textarea rows="5" cols="40" id="temperatue-before" placeholder="Insira as temperaturas separando-as por vírgula e casas decimais por ponto." autofocus></textarea>
+                        </div>
+
+                        <div>
+                            <span>para</span>
+                            <select id="unit-2">
+                                <optgroup label="Informe a unidade">
+                                    <option>Celsius</option>
+                                    <option selected>Fahrenheit</option>
+                                    <option>Kelvin</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <div class="button">
+                            <button type="button">Converter</button>
+                        </div>
+
+                    </div>
+                </div>
+
+            <div id="after">
+                <h2>Valores convertidos</h2>
+                <div id="values-c"></div>
+            </div>
+        </main>
+    </section>
+
+    <footer>
+        <i>Todos os direitos reservados: Pedro Henrique Castoldi Bezzerra.</i>
+    </footer>
+    
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

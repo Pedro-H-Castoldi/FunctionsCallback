@@ -1,0 +1,78 @@
+header {
+    background-color: #07cbff;
+    color: #000;
+    font-size: 30px;
+}
+
+section {
+    padding: 30px;
+}
+
+section main .convertion {
+    width: 100%;
+    max-width: 835px;
+    border-radius: 10px;
+    margin: auto;
+    display: flex;
+    background-color: crimson;
+    padding: 30px;
+}
+
+section main .convertion textarea {
+    padding: 5px 5px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+}
+
+section main .convertion select {
+    outline: none;
+}
+
+section main .convertion span {
+    color: #FFF;
+    font-weight: bold;
+    font-size: 25px;
+    margin-right: 5px;
+}
+
+section main .convertion .before, select {
+    margin-right: 10px;
+}
+section main .convertion select, span {
+    margin-top: 30px;
+}
+
+section main .convertion button {
+    padding: 15px;
+    margin-top: 16px;
+    margin-left: 3px;
+    background-color: darkviolet;
+    outline: none;
+    border: none;
+    color: #FFF;
+    border-radius: 5px;
+    box-shadow: #666 1px 1px 2px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+section main #after {
+    width: 100%;
+    max-width: 835px;
+    background-color: #3b3be0;
+    margin-top: 10px;
+    border-radius: 10px;
+    border-radius: 5px;
+}
+
+section main #after h2 {
+    color: #fff;
+}
+
+section main #after #values-c {
+    color: #fff;
+    text-shadow: #000 1px 0px 1px;
+    font-size: 30px;
+    padding: 20px 10px;
+}
