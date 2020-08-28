@@ -48,6 +48,9 @@ document.querySelector('button').addEventListener('click', () => {
     })
 
     let contWords = document.querySelector('#cont-words');
+    while(contWords.children[1]) {
+        contWords.children[1].remove();
+    }
 
     if(result) {
         result.map(e => {

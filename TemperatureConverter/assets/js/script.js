@@ -74,6 +74,12 @@ document.querySelector('button').addEventListener('click', () => {
         }
 
         if(result != '' && result) {
+            let valuesC = document.querySelector('#values-c');
+
+            while(valuesC.children[0]) {
+                valuesC.children[0].remove();
+            }
+
             result.map(e => {
                 let div = document.createElement('div');
                 let span = document.createElement('span');
@@ -81,7 +87,7 @@ document.querySelector('button').addEventListener('click', () => {
                 div.className = 'the-convertion';
                 span.append(e);
                 div.append(span);
-                document.querySelector('#values-c').append(div);
+                valuesC.append(div);
             })
         }
         
