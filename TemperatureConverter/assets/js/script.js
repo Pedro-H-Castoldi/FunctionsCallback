@@ -5,27 +5,29 @@ document.querySelector('button').addEventListener('click', () => {
 
     let filter = temperatures.filter(e => e != '');
     
-    let result = 0;
     let unit1 = document.querySelector('#unit-1').value;
     let unit2 = document.querySelector('#unit-2').value;
-
+    
     if(unit1 != unit2){
+        
+        let result;
+
         if(unit1 == 'Celsius') {
             if(unit2 == 'Fahrenheit'){
                 result = filter.map(e => {
-                    if(!isNaN(parseFloat(e))) {
-                        return e + ': ' + ((e * 9/5) + 32).toFixed(2) + ' °F';
+                    if(!isNaN(e)) {
+                        return e + ' °C: ' + ((e * 9/5) + 32).toFixed(2) + ' °F';
                     }
-                    return e + ': valor inválido';
+                    return e + ': valor incorreto';
                 })
             }
 
             else {
                 result = filter.map(e => {
-                    if(!isNaN(parseFloat(e))) {
-                        return e + ': ' + (parseFloat(e) + 273.15).toFixed(2) + ' K';
+                    if(!isNaN(e)) {
+                        return e + ' °C: ' + (parseFloat(e) + 273.15).toFixed(2) + ' K';
                     }
-                    return e + ': valor inválido';
+                    return e + ': valor incorreto';
                 })
             }
         }
@@ -33,19 +35,19 @@ document.querySelector('button').addEventListener('click', () => {
         if(unit1 == 'Fahrenheit') {
             if(unit2 == 'Celsius'){
                 result = filter.map(e => {
-                    if(!isNaN(parseFloat(e))) {
-                        return e + ': ' + ((e - 32) * 5/9).toFixed(2) + ' C';
+                    if(!isNaN(e)) {
+                        return e + ' °F: ' + ((e - 32) * 5/9).toFixed(2) + ' °C';
                     }
-                    return e + ': valor inválido';
+                    return e + ': valor incorreto';
                 })
             }
 
             else {
                 result = filter.map(e => {
-                    if(!isNaN(parseFloat(e))) {
-                        return e + ': ' + ((e - 32) * 5/9 + 273.15).toFixed(2) + ' K';
+                    if(!isNaN(e)) {
+                        return e + ' °F: ' + ((e - 32) * 5/9 + 273.15).toFixed(2) + ' K';
                     }
-                    return e + ': valor inválido';
+                    return e + ': valor incorreto';
                 })
             }
         }
@@ -53,8 +55,8 @@ document.querySelector('button').addEventListener('click', () => {
         if(unit1 == 'Kelvin') {
             if(unit2 == 'Fahrenheit'){
                 result = filter.map(e => {
-                    if(!isNaN(parseFloat(e))){
-                        return e + ': ' + ((e - 273.15) * 9/5 + 32).toFixed(2) + ' °F';
+                    if(!isNaN(e)){
+                        return e + ' K: ' + ((e - 273.15) * 9/5 + 32).toFixed(2) + ' °F';
                     }
                     return e + ': valor inválido';
                 })
@@ -62,14 +64,26 @@ document.querySelector('button').addEventListener('click', () => {
 
             else {
                 result = filter.map(e => {
-                    if(!isNaN(parseFloat(e))) {
-                        return e + ': ' + (e - 273.15).toFixed(2) + ' °C';
+                    if(!isNaN(e)) {
+                        return e + ' K: ' + (e - 273.15).toFixed(2) + ' °C';
                     }
                     return e + ': valor inválido';
                 })
             }
 
         }
-        document.querySelector('#values-c').innerHTML = result;
+
+        if(result != '' && result[0]) {
+            result.map(e => {
+                let div = document.createElement('div');
+                let span = document.createElement('span');
+                
+                div.className = 'the-convertion';
+                span.append(e);
+                div.append(span);
+                document.querySelector('#values-c').append(div);
+            })
+        }
+        
     }
 })
