@@ -8,14 +8,18 @@ section {
     padding: 30px;
 }
 
-section main .convertion {
-    width: 100%;
-    max-width: 835px;
-    border-radius: 10px;
-    margin: auto;
-    display: flex;
+section main .content {
     background-color: crimson;
-    padding: 30px;
+}
+
+section main .content .convertion {
+    display: flex;
+}
+
+section main .content .convertion select {
+    padding: 1px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 section main .convertion textarea {
@@ -63,15 +67,13 @@ section main .convertion button:active {
 }
 
 section main #after {
-    width: 100%;
-    max-width: 835px;
     background-color: #3b3be0;
     margin-top: 10px;
-    border-radius: 10px;
-    border-radius: 5px;
+    padding-top: 0;
 }
 
 section main #after h2 {
+    padding-top: 15px;
     color: #fff;
 }
 
@@ -79,7 +81,7 @@ section main #after #values-c {
     color: #fff;
     text-shadow: #000 1px 0px 1px;
     font-size: 20px;
-    padding: 20px 10px;
+    padding: 10px;
     display: block;
 }
 
@@ -91,4 +93,10 @@ section main #after #values-c .the-convertion {
     background-color: blueviolet;
     border-radius: 5px;
     margin-top: 5px;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #26842c;
+    color: white;
 }

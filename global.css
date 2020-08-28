@@ -2,11 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
     font-family: Arial, Helvetica, sans-serif;
 }
+
 header {
     width: 100%;
     max-width: 900px;
@@ -29,12 +27,18 @@ section {
     border-radius: 5px;
 }
 
+.content {
+    width: 100%;
+    max-width: 835px;
+    border-radius: 10px;
+    margin: auto;
+    padding: 30px;
+}
+
 footer {
     width: 100%;
     max-width: 900px;
     margin: auto;
-    background-color: #26842c;
-    color: white;
     padding: 30px 10px;
     text-shadow: #666 0px 1px 1px;
     box-shadow: #ccc 1px 0px 5px;
