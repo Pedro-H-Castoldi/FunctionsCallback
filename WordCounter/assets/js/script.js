@@ -1,4 +1,4 @@
-const ignore = ['.', ';', ',', '?', '!', '"', "'", '`', '(', ')', '´', '~'];
+const ignore = ['.', ';', ',', '?', '!', '"', "'", '`', '(', ')', '´', '~', '\n'];
 
 function check(word) {
 
@@ -9,6 +9,10 @@ function check(word) {
         }
     }
     return word;
+}
+
+function sortWords(a, b) {
+    return a[1] - b[1];
 }
 
 
@@ -30,19 +34,26 @@ document.querySelector('button').addEventListener('click', () => {
         return accumulator
     }, {})
 
-    wordsTotal = [];
+    let wordsTotal = [];
 
     for(word in wordsRepeat) {
-        wordsTotal.push(`${word}: ${wordsRepeat[word]}`)
+        wordsTotal.push([word, wordsRepeat[word]]);
     }
 
-    let contWords = document.querySelector('#cont-words');
+    wordsTotal.sort(sortWords).reverse()
 
-    if(wordsTotal) {
-        wordsTotal.map(e => {
-            let div = document.createElement('div');
-            div.className = "words";
-            let p = document.createElement('p');
+    let result = wordsTotal.map(e => {
+        let a = String(e).split(',');
+        return `${a[0]}: ${a[1]}`;
+    })
+
+    let contWords = document.querySelector('#cont-words');
+    let div = document.createElement('div');
+    div.className = "words";
+    let p = document.createElement('p');
+
+    if(result) {
+        result.map(e => {
 
             p.append(e);
             div.append(p);
