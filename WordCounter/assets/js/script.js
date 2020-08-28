@@ -48,12 +48,12 @@ document.querySelector('button').addEventListener('click', () => {
     })
 
     let contWords = document.querySelector('#cont-words');
-    let div = document.createElement('div');
-    div.className = "words";
-    let p = document.createElement('p');
 
     if(result) {
         result.map(e => {
+            let div = document.createElement('div');
+            div.className = "words";
+            let p = document.createElement('p');
 
             p.append(e);
             div.append(p);
