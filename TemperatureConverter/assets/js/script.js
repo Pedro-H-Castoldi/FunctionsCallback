@@ -73,7 +73,7 @@ document.querySelector('button').addEventListener('click', () => {
 
         }
 
-        if(result != '' && result[0]) {
+        if(result != '' && result) {
             result.map(e => {
                 let div = document.createElement('div');
                 let span = document.createElement('span');
